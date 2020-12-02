@@ -17,10 +17,6 @@ public class Ex1202_03 {
 			temp_s[temp_j] = temp;
 		}
 		
-		for(int i=0;i<45;i++) {
-			System.out.println(temp_s[i]);
-		}
-		
 		int[][] score = new int[9][5];
 		for(int i=0;i<9;i++) {
 			for(int j=0;j<5;j++) {
