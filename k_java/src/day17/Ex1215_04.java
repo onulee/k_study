@@ -5,20 +5,12 @@ import java.util.Scanner;
 public class Ex1215_04 {
 
 	public static void main(String[] args) {
-		// proNo -> TV:t001 ¼¼Å¹±â:w001 ³ÃÀå°í:r001
-		// ÀÌ¸§ : TV,¼¼Å¹±â,³ÃÀå°í  size: 500
-		// TV,TV,¼¼Å¹±â,³ÃÀå°í,¼¼Å¹±â,³ÃÀå°í,TV,¼¼Å¹±â,¼¼Å¹±â,³ÃÀå°í
 		Scanner scan = new Scanner(System.in);
 		Product2[] p = new Product2[10];
-		String[] p_name = {"TV","TV","¼¼Å¹±â","³ÃÀå°í","¼¼Å¹±â",
-				"³ÃÀå°í","TV","¼¼Å¹±â","¼¼Å¹±â","³ÃÀå°í"};
 		String[] title= {"S_NO","PRONO","ÀÌ¸§","»çÀÌÁî"};
         
 		// ³»¿ëÁ÷Á¢ÀÔ·Â - scan
 		for(int i=0;i<p.length;i++) {
-			// [ »óÇ°»ý»ê °øÀå ]
-			// 1.TV 2.¼¼Å¹±â 3.³ÃÀå°í
-			//»ý»êÇÏ·Á´Â Á¦Ç°ÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.>>
 			System.out.println("[ »óÇ°»ý»ê °øÀå ]");
 			System.out.println("1.TV 2.¼¼Å¹±â 3.³ÃÀå°í");
 			System.out.println("---------------------------");
