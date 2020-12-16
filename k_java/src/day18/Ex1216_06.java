@@ -6,14 +6,14 @@ public class Ex1216_06 {
 	static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Student s1=null; // 3명의 학생을 받는 형태로 변경해보세요.
+		Student[] s = new Student[3];
 		Ex1216_06 e = new Ex1216_06();
-		s1 = e.input(s1); //입력
-		e.output(s1); //출력
+		e.input(s); //입력
+		e.output(s); //출력
 	}//main
 	
 	//입력
-	Student input(Student s1) {
+	void input(Student[] s) {
 		System.out.println("[ 성적처리 프로그램 ]");
 		System.out.println("이름을 입력하세요.>>");
 	    String name = scan.nextLine();
@@ -23,19 +23,18 @@ public class Ex1216_06 {
 	    int eng = scan.nextInt();
 	    System.out.println("수학점수를 입력하세요.>>");
 	    int math = scan.nextInt();
-	    s1 = new Student(name,kor,eng,math);
-		return s1;
+	    s[0] = new Student(name,kor,eng,math);
 	}
 	//출력
-	void output(Student s1) {
-		System.out.print(s1.num+"\t");
-	    System.out.print(s1.name+"\t");
-	    System.out.print(s1.kor+"\t");
-	    System.out.print(s1.eng+"\t");
-	    System.out.print(s1.math+"\t");
-	    System.out.print(s1.total+"\t");
-	    System.out.printf("%.2f \t",s1.avg);
-	    System.out.print(s1.rank+"\t");
+	void output(Student[] s) {
+		System.out.print(s[0].num+"\t");
+	    System.out.print(s[0].name+"\t");
+	    System.out.print(s[0].kor+"\t");
+	    System.out.print(s[0].eng+"\t");
+	    System.out.print(s[0].math+"\t");
+	    System.out.print(s[0].total+"\t");
+	    System.out.printf("%.2f \t",s[0].avg);
+	    System.out.print(s[0].rank+"\t");
 	}
 	
 	
