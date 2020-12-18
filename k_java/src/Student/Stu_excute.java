@@ -61,8 +61,8 @@ public class Stu_excute {
 		return stu_count;
 	}//sinfo_input
 	
-	// 학생정보출력 메소드 - 학생정보객체배열, 학생수 -> return 학생수
-	void sinfo_output(Stu_info[] stu_info,int stu_count) {
+	// 학생전체정보출력 메소드 - 학생정보객체배열, 학생수 -> return 학생수
+	void sinfo_allOutput(Stu_info[] stu_info,int stu_count) {
 		System.out.println("[ 학생정보출력 ]");
 		// 상단타이틀 메소드 - 학번,이름,전화번호,학년,학과,주소,전공교수
 		String[] title = {"학번","이름","전화번호","학년","학과","주소","전공교수"};
@@ -78,6 +78,17 @@ public class Stu_excute {
 					stu_info[i].professor);
 		}//for
 	}//sinfo_output
+	
+	// 학생1명정보출력 메소드 - 학생정보객체배열, 학생수 -> return 학생수
+		void sinfo_oneOutput(Stu_info[] stu_info,int one_count) {
+			// 학생정보출력
+			for(int i=one_count;i<one_count+1;i++) {
+				System.out.printf("%s\t%s\t%s\t%d\t%s\t%s\t%s\t \n",
+						stu_info[i].num,stu_info[i].name,stu_info[i].tel,
+						stu_info[i].grade,stu_info[i].major,stu_info[i].address,
+						stu_info[i].professor);
+			}//for
+		}//sinfo_output
 	
 	
 	

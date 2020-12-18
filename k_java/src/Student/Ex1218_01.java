@@ -22,11 +22,31 @@ public class Ex1218_01 {
 				break;
 			case 2:
 				// 학생정보출력 메소드 - 학생정보객체배열, 학생수
-				ex.sinfo_output(stu_info,stu_count);
-
+				ex.sinfo_allOutput(stu_info,stu_count);
 				break;
 			case 3:
-
+				while(true) {
+					// 학생검색 메소드 - 학생정보,학생성적 출력
+					System.out.println("[ 학생검색 ]");
+					System.out.println("번호 또는 이름을 입력하세요.(0.이전화면 이동)>>");
+					String search = scan.nextLine();
+					if(search.equals("0")) {
+						System.out.println("▶▶▶ 이전화면으로 이동!");
+						break;
+					}
+					int check=0; //검색이 없을 경우
+					for(int i=0;i<stu_count;i++) {
+						if(stu_info[i].num.contains(search) || stu_info[i].name.contains(search)) {
+							//학생정보출력
+							ex.sinfo_oneOutput(stu_info,i);
+							// 학생성적을 출력하는 메소드 추가해야 됨.
+							check=1;
+						}
+					}
+					if(check==0) {
+						System.out.println("찾는데이터가 없습니다. 다시 입력하세요.!");
+					}
+				}
 				break;
 			case 4:
 
