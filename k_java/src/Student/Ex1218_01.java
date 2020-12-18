@@ -33,12 +33,15 @@ public class Ex1218_01 {
 
 				break;
 			case 5:
+				// 切积己利免仿
 
 				break;
 			case 6:
+				//殿荐贸府
 
 				break;
 			case 7:
+				//切积己利荐沥-12岿 14老 (己利荐沥)
 
 				break;
 			case 0:
