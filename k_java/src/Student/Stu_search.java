@@ -3,13 +3,12 @@ package Student;
 import java.util.Scanner;
 
 public class Stu_search {
-	// contains - 특정단어를 있는지 확인 해주는 함수
-	Scanner scan = new Scanner(System.in);
-	String[][] stu = { { "s001", "홍길동" }, { "s002", "홍길순" }, { "s003", "홍길자" }, { "s004", "김길수" },
-					{ "s005", "이길수" } };
 
-	while(true)
-	{
+	while(true)	{
+		Scanner scan = new Scanner(System.in);
+		String[][] stu = { { "s001", "홍길동" }, 
+				{ "s002", "홍길순" }, { "s003", "홍길자" }, 
+				{ "s004", "김길수" },	{ "s005", "이길수" } };
 		System.out.println("찾으려고 하는 번호 또는 이름을 입력하세요.>>");
 		String search = scan.nextLine();
 
