@@ -1,0 +1,9 @@
+package day26;
+
+public class GroundUnit extends Unit {
+
+	GroundUnit(int hp) {   //»ý¼ºÀÚ
+		super(hp);
+	}
+
+}

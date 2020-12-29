@@ -5,56 +5,56 @@ public class Ex1218_01 {
 
 	public static void main(String[] args) {
 		//배열선언
-		Stu_info[] stu_info = new Stu_info[10];
-		Student[] s = new Student[10];
+		Student[] stu_info = new Student[10];
+		Stu_Score[] s = new Stu_Score[10];
 		Stu_excute ex = new Stu_excute();
 		int stu_count=0; //학생수 체크변수
 		int choice=0; // 선택번호 변수
 
-		//무한반복
-		loop1:while(true) {
-			choice = ex.first_print(); // 학생관리프로그램 - 출력화면
-			//선택번호
-			switch (choice) {
-			case 1:
-				// 학생정보입력 메소드 - 학생정보객체배열, 학생수 -> return 학생수
-				stu_count = ex.sinfo_input(stu_info,stu_count); 
-				break;
-			case 2:
-				// 학생정보출력 메소드 - 학생정보객체배열, 학생수
-				ex.sinfo_allOutput(stu_info,stu_count);
-				break;
-			case 3:
-				// 학생검색 메소드 - 학생정보,학생성적 출력
-				ex.sinfo_search(stu_info, stu_count);
-				break;
-			case 4:
-				// 학생성적입력
-
-				break;
-			case 5:
-				// 학생성적출력
-
-				break;
-			case 6:
-				//등수처리
-
-				break;
-			case 7:
-				//학생성적수정-12월 14일 (성적수정)
-
-				break;
-			case 0:
-				System.out.println("프로그램 종료합니다.!");
-				break loop1;
-			default:
-
-				break;
-
-			}//switch
-		}//while
-		
-		
+//		//무한반복
+//		loop1:while(true) {
+//			choice = ex.first_print(); // 학생관리프로그램 - 출력화면
+//			//선택번호
+//			switch (choice) {
+//			case 1:
+//				// 학생정보입력 메소드 - 학생정보객체배열, 학생수 -> return 학생수
+//				stu_count = ex.sinfo_input(stu_info,stu_count); 
+//				break;
+//			case 2:
+//				// 학생정보출력 메소드 - 학생정보객체배열, 학생수
+//				ex.sinfo_allOutput(stu_info,stu_count);
+//				break;
+//			case 3:
+//				// 학생검색 메소드 - 학생정보,학생성적 출력
+//				ex.sinfo_search(stu_info, stu_count);
+//				break;
+//			case 4:
+//				// 학생성적입력
+//
+//				break;
+//			case 5:
+//				// 학생성적출력
+//
+//				break;
+//			case 6:
+//				//등수처리
+//
+//				break;
+//			case 7:
+//				//학생성적수정-12월 14일 (성적수정)
+//
+//				break;
+//			case 0:
+//				System.out.println("프로그램 종료합니다.!");
+//				break loop1;
+//			default:
+//
+//				break;
+//
+//			}//switch
+//		}//while
+//		
+//		
 		
 
 		// ---------------------------------

@@ -1,6 +1,6 @@
-package Student;
+package day26;
 
-public class Ex1218_02 {
+public class Ex1229_02 {
 
 	public static void main(String[] args) {
 		

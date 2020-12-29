@@ -1,24 +1,28 @@
 package Student;
 
 public class Student {
-	
-	//생성자
-	Student(){ }
-	Student(int kor,int eng,int math){
-		this.kor = kor;
-		this.eng = eng;
-		this.math = math;
-		this.total = kor + eng + math;
-		this.avg = this.total/3.0;
+	// 1. 학생정보입력 - 학번,이름,전화번호,학년,학과,주소,전공교수
+	static int count;
+	{ // 초기화블럭
+		count++;
+		num = "s"+String.format("%03d", count); //s001 s002...
 	}
 	
-	String num; //학번 s001,s002,s003
-	int kor;
-	int eng;
-	int math;
-	int total;
-	double avg;
-	int rank;
-	
-	
+	Student(){ }
+	Student(String name,String tel,int grade,String major,String address,String professor){
+		this.name = name;
+		this.tel = tel;
+		this.grade = grade;
+		this.major =major;
+		this.address = address;
+		this.professor = professor;
+	}
+	String num;
+	String name;
+	String tel;
+	int grade;
+	String major;
+	String address;
+	String professor;
+
 }

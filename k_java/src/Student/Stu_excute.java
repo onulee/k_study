@@ -1,5 +1,6 @@
 package Student;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Stu_excute {
@@ -24,12 +25,12 @@ public class Stu_excute {
 	}
 
 	// 학생정보입력 메소드 - 학생정보객체배열, 학생수 -> return 학생수
-	int sinfo_input(Stu_info[] stu_info, int stu_count) {
+	ArrayList sinfo_input(ArrayList stu_list) {
 		// 학생정보 무한반복
 		while (true) {
 			System.out.println("[ 학생정보입력 ]");
 			// 이름을 입력하세요.>>
-			System.out.println((stu_count + 1) + "번째 이름을 입력하세요.(0.이전화면 이동)>>");
+			System.out.println((stu_list.size()+1) + "번째 이름을 입력하세요.(0.이전화면 이동)>>");
 			String name = scan.nextLine();
 			if (name.equals("0")) {
 				System.out.println("▶▶▶ 이전화면으로 이동!");
@@ -46,49 +47,49 @@ public class Stu_excute {
 			String address = scan.nextLine();
 			System.out.println("전공교수를 입력하세요.>>");
 			String professor = scan.nextLine();
-			stu_info[stu_count] = new Stu_info(name, tel, grade, major, address, professor);
+			Student s = new Student(name, tel, grade, major, address, professor); 
+			stu_list.add(s);
 			System.out.println("[ 학생정보 ]");
 			System.out.println("------------------------");
-			System.out.println("학번 : " + stu_info[stu_count].num);
-			System.out.println("이름 : " + stu_info[stu_count].name);
-			System.out.println("전화번호 : " + stu_info[stu_count].tel);
-			System.out.println("학년 : " + stu_info[stu_count].grade);
-			System.out.println("학과 : " + stu_info[stu_count].major);
-			System.out.println("주소 : " + stu_info[stu_count].address);
-			System.out.println("전공교수 : " + stu_info[stu_count].professor);
+			System.out.println("학번 : " + s.num);
+			System.out.println("이름 : " + s.name);
+			System.out.println("전화번호 : " + s.tel);
+			System.out.println("학년 : " + s.grade);
+			System.out.println("학과 : " + s.major);
+			System.out.println("주소 : " + s.address);
+			System.out.println("전공교수 : " + s.professor);
 			System.out.println("------------------------");
-			stu_count++; // 학생수 증가
 		} // while
-		return stu_count;
+		return stu_list;
 	}// sinfo_input
 
-	// 학생전체정보출력 메소드 - 학생정보객체배열, 학생수 -> return 학생수
-	void sinfo_allOutput(Stu_info[] stu_info, int stu_count) {
+	// 학생전체정보출력 메소드 - 학생정보객체배열 
+	void sinfo_allOutput(ArrayList stu_list) {
 		System.out.println("[ 학생정보출력 ]");
 		// 상단타이틀 메소드 - 학번,이름,전화번호,학년,학과,주소,전공교수
 		String[] title = { "학번", "이름", "전화번호", "학년", "학과", "주소", "전공교수" };
 		for (int i = 0; i < title.length; i++) {
-			System.out.printf("%s\t", title[i]);
+			System.out.printf("%s \t", title[i]);
 		}
 		System.out.println();
 		// 학생정보출력
-		for (int i = 0; i < stu_count; i++) {
-			System.out.printf("%s\t%s\t%s\t%d\t%s\t%s\t%s\t \n", stu_info[i].num, stu_info[i].name, stu_info[i].tel,
-					stu_info[i].grade, stu_info[i].major, stu_info[i].address, stu_info[i].professor);
+		for (int i = 0; i < stu_list.size(); i++) {
+			Student s = (Student) stu_list.get(i); //Object->Student
+			System.out.printf("%s\t%s\t%s\t%d\t%s\t%s\t%s\t \n", s.num, s.name, s.tel,
+					s.grade, s.major, s.address, s.professor);
 		} // for
 	}// sinfo_output
 
-	// 학생1명정보출력 메소드 - 학생정보객체배열, 학생수 -> return 학생수
-	void sinfo_oneOutput(Stu_info[] stu_info, int one_count) {
+	// 학생1명정보출력 메소드 - 학생정보객체,1명
+	void sinfo_oneOutput(Student s) {
 		// 학생정보출력
-		for (int i = one_count; i < one_count + 1; i++) {
-			System.out.printf("%s\t%s\t%s\t%d\t%s\t%s\t%s\t \n", stu_info[i].num, stu_info[i].name, stu_info[i].tel,
-					stu_info[i].grade, stu_info[i].major, stu_info[i].address, stu_info[i].professor);
-		} // for
+		System.out.printf("%s\t%s\t%s\t%d\t%s\t%s\t%s\t \n", s.num, s.name, s.tel, s.grade, s.major, s.address,
+				s.professor);
+
 	}// sinfo_output
 
 	// 학생검색 메소드 - 학생정보,학생성적 출력
-	void sinfo_search(Stu_info[] stu_info, int stu_count) {
+	void sinfo_search(ArrayList stu_list) {
 		while(true) {
 			System.out.println("[ 학생검색 ]");
 			System.out.println("번호 또는 이름을 입력하세요.(0.이전화면 이동)>>");
@@ -98,10 +99,11 @@ public class Stu_excute {
 				break;
 			}
 			int check=0; //검색이 없을 경우
-			for(int i=0;i<stu_count;i++) {
-				if(stu_info[i].num.contains(search) || stu_info[i].name.contains(search)) {
+			for(int i=0;i<stu_list.size();i++) {
+				Student s = (Student)stu_list.get(i);
+				if(s.num.contains(search) || s.name.contains(search)) {
 					//학생정보출력
-					sinfo_oneOutput(stu_info,i);
+					sinfo_oneOutput(s);
 					// 학생성적을 출력하는 메소드 추가해야 됨.
 					check=1;
 				}
