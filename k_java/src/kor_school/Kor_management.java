@@ -40,12 +40,16 @@ public class Kor_management {
 				se.outputAll_score(score_list,stu_list);
 				break;
 			case 6:
-
+				//殿荐贸府 皋家靛
+				se.rank_process(score_list,stu_list);
 				break;
 			case 7:
-
+				//切积己利荐沥 皋家靛
+				se.modify_score(score_list,stu_list);
 				break;
 			case 8:
+				//切积己利昏力 皋家靛
+				se.delete_score(score_list,stu_list);
 
 				break;
 			

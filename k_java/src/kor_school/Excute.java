@@ -29,6 +29,7 @@ public class Excute {
 	void input_student(ArrayList stu_list) {
 		//학생정보 학번,이름,전화번호,학년,학과,주소,전공교수
 		//무한반복
+		System.out.println("[ 학생정보 입력 ]");
 		while(true) {
 			System.out.println("학생이름을 입력하세요.(0.이전화면이동)>>");
 			String name = scan.nextLine();
@@ -61,6 +62,7 @@ public class Excute {
 	} //input_student()
 	
 	void outputAll_student(ArrayList stu_list) {
+		System.out.println("[ 학생정보 출력 ]");
 		for(int i=0;i<title.length;i++) {
 			if(i==2) {
 				System.out.printf("%-13s \t",title[i]);
@@ -105,6 +107,7 @@ public class Excute {
 	
 	//학생검색
 	void search_student(ArrayList stu_list) {
+		System.out.println("[ 학생정보 검색 ]");
 		//무한반복
 		while(true) {
 			System.out.println("학생이름 또는 학생번호를 입력하세요.(0.이전화면이동)>>");
